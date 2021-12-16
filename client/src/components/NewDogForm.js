@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-// **still need to import this to dog card container!
-// 
-
 function NewDogForm ({currentUser}) {
     const history = useHistory();
     const [newDogFormData, setNewDogFormData] = useState({
@@ -35,7 +32,6 @@ function NewDogForm ({currentUser}) {
 
     function handleSubmit (event) {
         event.preventDefault();
-        console.log(newDogFormData)
 
         fetch('/api/dogs', {
             method: "POST",
@@ -47,7 +43,6 @@ function NewDogForm ({currentUser}) {
         .then(response => {
             if (response.ok) {
                 response.json().then(data => {
-                    console.log(data)
                     history.push(`/dogs_for_rent/${data.id}`)
                 })
             }

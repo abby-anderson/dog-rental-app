@@ -8,7 +8,6 @@ import Login from "./Login";
 import UserProfile from "./UserProfile";
 import DogDetail from './DogDetail';
 import NewRentalForm from './NewRentalForm';
-// import background from "../images/StarryShiba.png";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -23,15 +22,6 @@ function App() {
     })
   }, [])
 
-  // if(!currentUser) {
-  //   return (
-  //     <>
-  //       <Login setCurrentUser={setCurrentUser} />
-  //     </>
-  //   )
-  // }
-  
-  
   return (
     <div>
       <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />

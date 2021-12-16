@@ -28,9 +28,7 @@ function DogCard({dog, updateDogVotes}) {
         .then(response => {
             if (response.ok) {
                 response.json().then(data => {
-                    // console.log(data)
                     updateDogVotes(data)
-                        
                 })
             }
         })

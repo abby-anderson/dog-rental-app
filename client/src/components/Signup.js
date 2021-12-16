@@ -25,7 +25,6 @@ function Signup({setCurrentUser}) {
 
     function handleSubmit (event) {
         event.preventDefault();
-        console.log('inside handlesubmit, prior to actually fetch posting', formData);
 
         fetch('/api/signup', {
             method: 'POST',
@@ -43,7 +42,6 @@ function Signup({setCurrentUser}) {
                 })
             } else {
                 response.json().then(errors => {
-                    console.log(errors)
                     setErrors(errors.errors)
                 })
             }

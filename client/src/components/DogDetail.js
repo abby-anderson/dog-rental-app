@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useHistory } from 'react-router-dom';
 
 function DogDetail ({currentUser}) {
-  // window.location.reload();
   const [selectedDog,setSelectedDog] = useState(null);
   const params = useParams();
   const history = useHistory();
@@ -12,13 +11,10 @@ function DogDetail ({currentUser}) {
     .then(response => response.json())
     .then(data => {
       setSelectedDog(data)
-      console.log(data)
     })
   }, [params.id])
 
   function handleDeleteClick () {
-    console.log('inside delete click function', selectedDog)
-
     fetch(`/api/dogs/${params.id}`, {
       method: "DELETE"
     })

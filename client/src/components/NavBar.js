@@ -9,7 +9,7 @@ const linkStyles = {
     justifyContent: "center",
     textAlign: "center",
     borderRadius: "0px 17px 0px 17px",
-  };
+};
 
 function NavBar({currentUser, setCurrentUser}) {
 
@@ -21,7 +21,6 @@ function NavBar({currentUser, setCurrentUser}) {
         .then(response => {
             if (response.ok){
                 setCurrentUser(null);
-                console.log('successful delete')
             }
         })
     }
